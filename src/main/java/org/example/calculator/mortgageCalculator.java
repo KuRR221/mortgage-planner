@@ -1,3 +1,4 @@
+package org.example.calculator;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -5,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 //Mortgage loan calculator built by Anton Backman using Gradle 7.6.4
 
 public class mortgageCalculator {
-    public static void main(String[] args) {
+    static void main(String[] args) {
 
         // Try to read specified txt file, if not throw error
         try {
@@ -23,7 +24,7 @@ public class mortgageCalculator {
 
     }
 
-    private static void calculateMortgage(InputStream fileName) {
+    static void calculateMortgage(InputStream fileName) {
 
         // Read specified txt, txt files should be located in resources to work correctly
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(fileName, StandardCharsets.UTF_8))) {
@@ -59,9 +60,9 @@ public class mortgageCalculator {
         }
     }
 
-    private static CustomerData parseCustomerData(String line) {
+    static CustomerData parseCustomerData(String line) {
 
-        // Return if line is empty
+        // Return if line is empty or null
         if (line.trim().isEmpty()) {
             return null;
         }
@@ -92,7 +93,7 @@ public class mortgageCalculator {
     }
 
     // Function to clean formatting errors in prospect names using regex
-    private static String cleanName(String name) {
+    static String cleanName(String name) {
 
         // Removing characters that are not letters, digits, whitespace or excluded special characters
         String cleanName = name.replaceAll("[^a-zA-Z0-9\\séÉåÅäÄöÖøØÁáÍíÓóÚúÝýÀàÈèÌìÒòÙùÂâÊêÎîÔôÛûËëÏïÜüÇçÑñÆæ]", " ");
@@ -106,7 +107,7 @@ public class mortgageCalculator {
     }
 
     // Using a record to store customer data
-    private record CustomerData(String customerName, double totalLoan, double yearlyInterest, int loanPeriod) {
+    record CustomerData(String customerName, double totalLoan, double yearlyInterest, int loanPeriod) {
         // Getters for the customer data
         public String getCustomerName() {
             return customerName;
@@ -123,7 +124,7 @@ public class mortgageCalculator {
     }
 
     // Function to calculate monthly payment
-    private static double calculateMonthlyPayment(double totalLoan, double yearlyInterest, int loanPeriod) {
+    static double calculateMonthlyPayment(double totalLoan, double yearlyInterest, int loanPeriod) {
 
         // Calculate number of payments and monthly interest from parsed data
         int numberOfPayments = loanPeriod * 12;
@@ -136,7 +137,7 @@ public class mortgageCalculator {
     }
 
     // Since we cant use any math dependencies, we use a replacement function to calculate exponents
-    private static double power(double base, int exponent) {
+    static double power(double base, int exponent) {
         // Start at 1
         double result = 1.0;
         // Calculating the exponent with a for loop where the result is multiplied by the base X times

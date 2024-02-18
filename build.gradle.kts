@@ -8,12 +8,16 @@ repositories {
     mavenCentral()
 }
 
-tasks.getByName<Test>("test") {
-    useJUnitPlatform()
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
 }
 
 tasks.named<Jar>("jar") {
     manifest {
         attributes["Main-Class"] = "mortgageCalculator"
     }
+}
+
+tasks.named<Test>("test") {
+    useJUnitPlatform()
 }
