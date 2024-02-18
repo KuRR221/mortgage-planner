@@ -95,7 +95,7 @@ public class mortgageCalculator {
     private static String cleanName(String name) {
 
         // Removing characters that are not letters, digits, whitespace or excluded special characters
-        String cleanName = name.replaceAll("[^a-zA-Z0-9\\séÉåÅäÄöÖÆøØ]", " ");
+        String cleanName = name.replaceAll("[^a-zA-Z0-9\\séÉåÅäÄöÖøØÁáÍíÓóÚúÝýÀàÈèÌìÒòÙùÂâÊêÎîÔôÛûËëÏïÜüÇçÑñÆæ]", " ");
 
         // Previous function replaces unwanted characters with whitespaces, which is why we need to remove any additional
         // whitespaces between letters
