@@ -40,7 +40,7 @@ public class mortgageCalculatorTest {
 
     @Test
     public void testParseCustomerDataInvalidInput() {
-        String invalidInput = "This is definately not correct";
+        String invalidInput = "This is definitely not correct";
         CustomerData result = mortgageCalculator.parseCustomerData(invalidInput);
 
         assertNull(result);
