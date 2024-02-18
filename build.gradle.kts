@@ -14,7 +14,7 @@ dependencies {
 
 tasks.named<Jar>("jar") {
     manifest {
-        attributes["Main-Class"] = "mortgageCalculator"
+        attributes["Main-Class"] = "org.example.calculator.mortgageCalculator"
     }
 }
 

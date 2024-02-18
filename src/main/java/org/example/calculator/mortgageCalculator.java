@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 //Mortgage loan calculator built by Anton Backman using Gradle 7.6.4
 
 public class mortgageCalculator {
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
         // Try to read specified txt file, if not throw error
         try {
