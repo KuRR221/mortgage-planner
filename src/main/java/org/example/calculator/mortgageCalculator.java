@@ -10,14 +10,26 @@ public class mortgageCalculator {
 
         // Try to read specified txt file, if not throw error
         try {
-            String file = args[0];
-            InputStream fileName = mortgageCalculator.class.getClassLoader().getResourceAsStream(file + ".txt");
 
+            // Return if no input file is specified when running the program
+            if (args.length == 0) {
+                System.err.println("Please provide the name of the input file.");
+                return;
+            }
+
+            // Reading file
+            String file = args[0];
+            InputStream fileName = mortgageCalculator.class.getClassLoader().getResourceAsStream(file);
+
+            // Make sure specified file exists
             if (fileName != null) {
                 calculateMortgage(fileName);
             } else {
                 System.err.println("File not found: " + file);
             }
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println("Missing input file argument.");
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -9,9 +9,9 @@ Claes Månsson,1300.55,8.67,2
 
 
 
+Batman, 1234, 7,1
 
 
-
-
+Very wrong input,,,,
 
 .
