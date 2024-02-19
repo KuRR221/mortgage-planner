@@ -28,7 +28,7 @@ This Java program calculates mortgage payments based on input data provided in a
 
 - Navigate to the project folder in CMD
 
-- Then run the command ./gradlew build
+- Then run the command gradlew.bat build
 - This builds the project into a jar file located in build/libs
 
 - After the build is completed you run the program with the command java -jar build/libs/mortgage-planner-1.0.jar prospects.txt
